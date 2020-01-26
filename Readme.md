@@ -27,9 +27,7 @@ __Analysis Approach:__
     * Creating Y variable: (Useful)__
     We wanted to create a binary variable that will indicate whether a particular review was useful or not. In order to so we followed the following approach:
    1. Step 1: Compute the helpfulness i.e. fraction of total users that found the review helpful for each review as follows: 
-        $$
-         \frac{\#HelpfulnessNumerator }{\#HelpfulnessDenominator} 
-        $$ 
+         helpfulness = (HelpfulnessNumerator / HelpfulnessDenominator)
    2. Step 2: 
        * Decide the threshold to create the useful variable. In order to do this, we inspected the distribution of data and observed that ~80% of the dataset had helpfulness greater than 50%. That is we cannot take 50% as the threshold.
        * In order to avoid creating an imbalanced dataset, we decided to subset the data by taking only __black and white__ areas. We filtered the records which have helpfulness as __1 - these will be the helpful reviews__ and helpfulness of __less than 0.4 - these will be the not helpful reviews__ 
